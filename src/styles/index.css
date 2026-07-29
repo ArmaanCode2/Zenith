@@ -1,0 +1,176 @@
+/* Global CSS Design System - Zenith CS Club (SACCM) */
+
+:root {
+  /* Institutional Color System */
+  --color-primary: #800020;         /* SACCM Institutional Burgundy/Maroon */
+  --color-primary-hover: #66001a;   /* Darker Burgundy for interactions */
+  --color-navy: #0f172a;            /* Deep Navy Blue */
+  --color-navy-light: #1e293b;      /* Slate Navy */
+  --color-accent: #991b1b;          /* Crimson Accent */
+  
+  /* Backgrounds & Surfaces */
+  --color-background: #f8f9fa;      /* Light neutral page background */
+  --color-surface: #ffffff;         /* Pure white container/card surface */
+  --color-surface-alt: #f1f5f9;     /* Subtle light gray accent surface */
+  
+  /* Text & Typography Colors */
+  --color-text: #1e293b;            /* Dark readable primary text */
+  --color-text-muted: #64748b;      /* Muted secondary body text */
+  --color-text-light: #ffffff;      /* White text for dark headers/footers */
+  
+  /* Borders & Dividers */
+  --color-border: #e2e8f0;          /* Clean light border */
+  --color-border-dark: #334155;     /* Dark border for header/footer elements */
+  
+  /* Component Variables */
+  --container-width: 1200px;
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  
+  /* Elevation Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.08);
+  
+  /* Transitions */
+  --transition-speed: 0.25s ease-in-out;
+}
+
+/* Reset & Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reusable Layout Container */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-navy);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.35rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+p.text-muted {
+  color: var(--color-text-muted);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.35rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color var(--transition-speed), border-color var(--transition-speed), transform 0.15s ease;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  color: var(--color-text-light);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+}
+
+/* Placeholder Utility Card for Phase 1 */
+.placeholder-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: 2.5rem 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+
+.placeholder-badge {
+  display: inline-block;
+  background-color: var(--color-surface-alt);
+  color: var(--color-text-muted);
+  border: 1px dashed var(--color-border);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+/* Responsive Headings */
+@media (max-width: 768px) {
+  h1 { font-size: 1.85rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.2rem; }
+  .container { padding-left: 1rem; padding-right: 1rem; }
+}
