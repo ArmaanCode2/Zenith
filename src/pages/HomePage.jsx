@@ -47,7 +47,7 @@ function HomePage() {
             <span className="section-label">Who We Are</span>
             <h2>More Than a Classroom</h2>
             <p className="section-description">
-              Zenith CS Club provides opportunities for students to engage with computer science beyond standard academic coursework. Through technical activities, logic competitions, problem-solving challenges, and interactive campus events, students apply their knowledge in practical and collaborative ways.
+              Zenith CS Club provides opportunities for students to engage with computer science beyond standard academic course. Through technical activities, logic competitions, problem-solving challenges, and interactive campus events, students apply their knowledge in practical and collaborative ways.
             </p>
             <Link to="/about" className="link-arrow">
               About Zenith &rarr;
@@ -137,7 +137,7 @@ function HomePage() {
           <div className="featured-event-container">
             <div className="featured-event-grid">
               <div className="featured-event-body">
-                <span className="section-label">[ Event Title Placeholder ]</span>
+                <span className="section-label">Case Files treasure hunt</span>
                 <h3 className="featured-event-title">Flagship Multi-Round Tech Event</h3>
                 <p className="text-muted">
                   An interactive multi-stage competition structure designed to test both digital proficiency and physical puzzle solving around campus.
@@ -173,13 +173,11 @@ function HomePage() {
               </div>
 
               <div className="featured-event-media">
-                <div className="event-media-placeholder">
-                  <div style={{ fontSize: '2.5rem' }}>🚩</div>
-                  <strong>[ Multi-Round Event Poster / Photo Placeholder ]</strong>
-                  <p style={{ fontSize: '0.85rem' }}>
-                    Visual poster or event photograph will be displayed here.
-                  </p>
-                </div>
+                <img 
+                  src="/club/case-file.jpg" 
+                  alt="Zenith CS Club Event" 
+                  className="hero-image" 
+                />
               </div>
             </div>
           </div>
@@ -201,27 +199,29 @@ function HomePage() {
             {}
             <EventCard 
               category="Multi-Round Event"
-              title="Technical Quiz & Campus Hunt"
-              date="Previous Event"
-              description="A two-round competition featuring a web-based PHP quiz followed by a clue-based physical campus hunt."
+              title="Campus Hunt"
+              date="Case Files"
+              description="A clue-based physical campus hunt. Participants gather clues to find the final answer for the puzzle"
               detailsLink="/events"
             />
 
             {}
             <EventCard 
-              category="Activity Placeholder"
-              title="[ Activity Title Placeholder ]"
-              date="[ Date Placeholder ]"
-              description="Placeholder description for future technical workshop or coding activity."
+              image="public/club/29-07-26.jpg"
+              category="Orientation 2026"
+              title="Introduction & quiz"
+              date="Orientation 2026"
+              description="A session held for first year students introducing the Zenith CS club."
               detailsLink="/events"
             />
 
             {}
             <EventCard 
-              category="Event Placeholder"
-              title="[ Competition Title Placeholder ]"
-              date="[ Date Placeholder ]"
-              description="Placeholder description for upcoming club event or interactive session."
+              image="public/club/case-file-quiz.png"
+              category="Multi-Round Event"
+              title="Web-based quiz"
+              date="Case files first round"
+              description="Online quiz as the first round in the case files event ."
               detailsLink="/events"
             />
           </div>
@@ -241,9 +241,10 @@ function HomePage() {
 
           <div className="team-preview-grid">
             <MemberCard 
-              badge="Faculty Guidance"
-              namePlaceholder="[ Faculty Mentor Placeholder ]"
-              rolePlaceholder="Faculty In-Charge / Mentor"
+              image="/team/mayank.jpg"
+              badge="Student Coordinator"
+              namePlaceholder="Mayank Goyal"
+              // rolePlaceholder="Faculty In-Charge"
             />
             <MemberCard 
               badge="Student Leadership"
