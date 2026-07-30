@@ -2,12 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import EventCard from '../components/common/EventCard';
 import MemberCard from '../components/common/MemberCard';
+import HorizontalCarousel from '../components/common/HorizontalCarousel';
 import '../styles/home.css';
 
 function HomePage() {
   return (
     <div className="home-page">
-      {}
+      {/* SECTION 1 — HERO */}
       <section className="hero-section">
         <div className="container">
           <div className="hero-grid">
@@ -40,14 +41,14 @@ function HomePage() {
         </div>
       </section>
 
-      {}
+      {/* SECTION 2 — SHORT INTRODUCTION */}
       <section className="section bg-white">
         <div className="container">
           <div className="intro-container">
             <span className="section-label">Who We Are</span>
             <h2>More Than a Classroom</h2>
             <p className="section-description">
-              Zenith CS Club provides opportunities for students to engage with computer science beyond standard academic course. Through technical activities, logic competitions, problem-solving challenges, and interactive campus events, students apply their knowledge in practical and collaborative ways.
+              Zenith CS Club provides opportunities for students to engage with computer science beyond standard academic coursework. Through technical activities, logic competitions, problem-solving challenges, and interactive campus events, students apply their knowledge in practical and collaborative ways.
             </p>
             <Link to="/about" className="link-arrow">
               About Zenith &rarr;
@@ -56,7 +57,7 @@ function HomePage() {
         </div>
       </section>
 
-      {}
+      {/* SECTION 3 — WHAT WE DO (Core Pillars Mobile Carousel) */}
       <section className="section bg-light">
         <div className="container">
           <div className="section-header">
@@ -67,8 +68,8 @@ function HomePage() {
             </p>
           </div>
 
-          <div className="pillars-grid">
-            {}
+          <HorizontalCarousel className="pillars-grid">
+            {/* Pillar 1 */}
             <div className="pillar-card">
               <div className="pillar-icon-wrapper">
                 <svg viewBox="0 0 24 24">
@@ -81,7 +82,7 @@ function HomePage() {
               </p>
             </div>
 
-            {}
+            {/* Pillar 2 */}
             <div className="pillar-card">
               <div className="pillar-icon-wrapper">
                 <svg viewBox="0 0 24 24">
@@ -94,7 +95,7 @@ function HomePage() {
               </p>
             </div>
 
-            {}
+            {/* Pillar 3 */}
             <div className="pillar-card">
               <div className="pillar-icon-wrapper">
                 <svg viewBox="0 0 24 24">
@@ -107,11 +108,11 @@ function HomePage() {
               </p>
             </div>
 
-            {}
+            {/* Pillar 4 */}
             <div className="pillar-card">
               <div className="pillar-icon-wrapper">
                 <svg viewBox="0 0 24 24">
-                  <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                  <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
                 </svg>
               </div>
               <h3 className="pillar-title">Teamwork & Community</h3>
@@ -119,11 +120,11 @@ function HomePage() {
                 Opportunities for students to collaborate, organize activities, exchange ideas, and build peer connections.
               </p>
             </div>
-          </div>
+          </HorizontalCarousel>
         </div>
       </section>
 
-      {}
+      {/* SECTION 4 — FEATURED EVENT */}
       <section className="section bg-white">
         <div className="container">
           <div className="section-header">
@@ -184,7 +185,7 @@ function HomePage() {
         </div>
       </section>
 
-      {}
+      {/* SECTION 5 — RECENT ACTIVITIES (Mobile Carousel) */}
       <section className="section bg-light">
         <div className="container">
           <div className="section-header">
@@ -195,8 +196,7 @@ function HomePage() {
             </p>
           </div>
 
-          <div className="events-grid">
-            {}
+          <HorizontalCarousel className="events-grid">
             <EventCard 
               category="Multi-Round Event"
               title="Campus Hunt"
@@ -205,9 +205,8 @@ function HomePage() {
               detailsLink="/events"
             />
 
-            {}
             <EventCard 
-              image="public/club/29-07-26.jpg"
+              image="/club/29-07-26.jpg"
               category="Orientation 2026"
               title="Introduction & quiz"
               date="Orientation 2026"
@@ -215,20 +214,19 @@ function HomePage() {
               detailsLink="/events"
             />
 
-            {}
             <EventCard 
-              image="public/club/case-file-quiz.png"
+              image="/club/case-file-quiz.png"
               category="Multi-Round Event"
               title="Web-based quiz"
               date="Case files first round"
               description="Online quiz as the first round in the case files event ."
               detailsLink="/events"
             />
-          </div>
+          </HorizontalCarousel>
         </div>
       </section>
 
-      {}
+      {/* SECTION 6 — CLUB COMMUNITY PREVIEW (Mobile Carousel) */}
       <section className="section bg-white">
         <div className="container">
           <div className="section-header text-center">
@@ -239,24 +237,23 @@ function HomePage() {
             </p>
           </div>
 
-          <div className="team-preview-grid">
+          <HorizontalCarousel className="team-preview-grid">
             <MemberCard 
               image="/team/mayank.jpg"
               badge="Student Coordinator"
               namePlaceholder="Mayank Goyal"
-              // rolePlaceholder="Faculty In-Charge"
             />
             <MemberCard 
-              badge="Student Leadership"
-              namePlaceholder="[ Student Lead Placeholder ]"
-              rolePlaceholder="Club Lead / President"
+              image="/team/rupan.png"
+              badge="Marketing manager"
+              namePlaceholder="Rupa frontline"
             />
             <MemberCard 
+              image="/team/arpit.png"
               badge="Core Team"
-              namePlaceholder="[ Member Placeholder ]"
-              rolePlaceholder="Event Coordinator / Core Member"
+              namePlaceholder="Arpit Gupta"
             />
-          </div>
+          </HorizontalCarousel>
 
           <div style={{ textAlign: 'center' }}>
             <Link to="/team" className="btn btn-outline">
@@ -266,7 +263,7 @@ function HomePage() {
         </div>
       </section>
 
-      {}
+      {/* SECTION 7 — GALLERY PREVIEW (Mobile Carousel) */}
       <section className="section bg-light">
         <div className="container">
           <div className="section-header text-center">
@@ -277,15 +274,15 @@ function HomePage() {
             </p>
           </div>
 
-          <div className="gallery-grid-preview">
+          <HorizontalCarousel className="gallery-grid-preview">
             <div className="gallery-item-placeholder">
-              <span>[ Event Photo 1 Placeholder ]</span>
+              <img src="/gallery/1.jpg" alt="Moment 1" />
             </div>
             <div className="gallery-item-placeholder">
-              <span>[ Quiz Round Photo 2 Placeholder ]</span>
+              <img src="/gallery/2.jpg" alt="Moment 2" />
             </div>
             <div className="gallery-item-placeholder">
-              <span>[ Campus Hunt Photo 3 Placeholder ]</span>
+              <img src="/gallery/3.jpg" alt="Moment 3" />
             </div>
             <div className="gallery-item-placeholder">
               <span>[ Team Photo 4 Placeholder ]</span>
@@ -296,7 +293,7 @@ function HomePage() {
             <div className="gallery-item-placeholder">
               <span>[ Ceremony Photo 6 Placeholder ]</span>
             </div>
-          </div>
+          </HorizontalCarousel>
 
           <div style={{ textAlign: 'center' }}>
             <Link to="/gallery" className="btn btn-outline">
@@ -306,7 +303,7 @@ function HomePage() {
         </div>
       </section>
 
-      {}
+      {/* SECTION 8 — FINAL CTA */}
       <section className="section bg-white" style={{ paddingBottom: '5rem' }}>
         <div className="container">
           <div className="cta-box">

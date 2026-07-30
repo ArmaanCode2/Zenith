@@ -483,7 +483,6 @@
   color: var(--color-text-muted);
 }
 
-/* SECTION 7: GALLERY PREVIEW */
 .gallery-grid-preview {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -502,18 +501,22 @@
   justify-content: center;
   color: var(--color-text-muted);
   font-size: 0.85rem;
-  padding: 1rem;
+  padding: 0;
   text-align: center;
   transition: border-color var(--transition-speed), background-color var(--transition-speed);
+  overflow: hidden;
 }
 
 .gallery-item-placeholder:hover {
   border-color: var(--color-primary);
   background-color: var(--color-surface);
+  cursor: pointer;
 }
 
+.gallery-item-placeholder img,
 .gallery-item-image {
   width: 100%;
+  height: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: var(--border-radius-md);
@@ -522,8 +525,9 @@
   transition: transform var(--transition-speed), box-shadow var(--transition-speed);
 }
 
+.gallery-item-placeholder img:hover,
 .gallery-item-image:hover {
-  transform: translateY(-3px);
+  transform: scale(1.03);
   box-shadow: var(--shadow-md);
 }
 
@@ -567,6 +571,16 @@
   color: var(--color-navy);
 }
 
+/* CAROUSEL BASE STYLES */
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.carousel-controls-mobile {
+  display: none;
+}
+
 /* Responsive Media Queries */
 @media (max-width: 1024px) {
   .pillars-grid {
@@ -598,17 +612,84 @@
     min-height: 220px;
   }
 
-  .events-grid,
-  .team-preview-grid,
-  .gallery-grid-preview {
-    grid-template-columns: 1fr;
-  }
-
   .cta-box {
     padding: 2.5rem 1.5rem;
   }
 
   .cta-box h2 {
     font-size: 1.75rem;
+  }
+
+  /* MOBILE HORIZONTAL CAROUSELS (<= 768px) */
+  .carousel-wrapper {
+    overflow: hidden;
+  }
+
+  .carousel-controls-mobile {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    padding-right: 0.25rem;
+  }
+
+  .carousel-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    transition: opacity var(--transition-speed), background-color var(--transition-speed), border-color var(--transition-speed);
+  }
+
+  .carousel-btn:hover:not(:disabled) {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border-color: var(--color-primary);
+  }
+
+  .carousel-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+
+  .carousel-track {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    grid-template-columns: none !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    scroll-behavior: smooth !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 0.75rem !important;
+    margin-bottom: 1.25rem !important;
+    gap: 1rem !important;
+  }
+
+  .carousel-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Main Card width on Mobile: 85% width so next card peeks */
+  .carousel-track > * {
+    flex: 0 0 85% !important;
+    max-width: 85% !important;
+    scroll-snap-align: start !important;
+    margin: 0 !important;
+  }
+
+  .carousel-track.gallery-grid-preview > * {
+    flex: 0 0 82% !important;
+    max-width: 82% !important;
   }
 }
