@@ -198,6 +198,7 @@ function HomePage() {
 
           <HorizontalCarousel className="events-grid">
             <EventCard 
+              image="/club/campus-hunt.jpg"
               category="Multi-Round Event"
               title="Campus Hunt"
               date="Case Files"
@@ -285,13 +286,13 @@ function HomePage() {
               <img src="/gallery/3.jpg" alt="Moment 3" />
             </div>
             <div className="gallery-item-placeholder">
-              <span>[ Team Photo 4 Placeholder ]</span>
+              <img src="/gallery/4.jpg" alt="Moment 3" />
             </div>
             <div className="gallery-item-placeholder">
-              <span>[ Workshop Photo 5 Placeholder ]</span>
+              <img src="/gallery/5.jpg" alt="Moment 3" />
             </div>
             <div className="gallery-item-placeholder">
-              <span>[ Ceremony Photo 6 Placeholder ]</span>
+              <img src="/gallery/6.jpg" alt="Moment 3" />
             </div>
           </HorizontalCarousel>
 
