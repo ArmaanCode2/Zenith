@@ -1,5 +1,6 @@
 import React from 'react';
 import EventCard from '../components/common/EventCard';
+import HorizontalCarousel from '../components/common/HorizontalCarousel';
 import { eventsData } from '../data/events';
 import '../styles/events.css';
 
@@ -18,11 +19,11 @@ function EventsPage() {
 
       <section className="section bg-light">
         <div className="container">
-          <div className="events-grid">
+          <HorizontalCarousel className="events-grid">
             {eventsData.map(event => (
               <EventCard key={event.id} event={event} />
             ))}
-          </div>
+          </HorizontalCarousel>
         </div>
       </section>
     </div>

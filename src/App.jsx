@@ -6,6 +6,7 @@ import './styles/layout.css';
 import Header from './components/layout/Header';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
+import ScrollToTop from './components/common/ScrollToTop';
 
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
@@ -18,6 +19,7 @@ import NotFoundPage from './pages/NotFoundPage';
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="app-shell">
         <Header />
         <Navbar />

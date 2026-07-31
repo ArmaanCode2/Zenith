@@ -1,16 +1,12 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import HorizontalCarousel from '../components/common/HorizontalCarousel';
 import { getEventById } from '../data/events';
 import '../styles/events.css';
 
 function EventDetailPage() {
   const { eventId } = useParams();
   const event = getEventById(eventId);
-
-  //scroll top on page 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [eventId]);
 
   if (!event) {
     return (
@@ -93,7 +89,7 @@ function EventDetailPage() {
                 <React.Fragment key={round.roundNumber}>
                   <div className="flow-step">
                     <span className="flow-step-number">0{round.roundNumber}</span>
-                    <span className="flow-step-title">{round.title.replace(/^Round \d+:\s*/i, '')}</span>
+                    <span className="flow-step-title">{round.title}</span>
                     <span className="flow-step-type">{round.type}</span>
                   </div>
                   {index < event.rounds.length - 1 && (
@@ -145,13 +141,13 @@ function EventDetailPage() {
               <h2>Event Photo Gallery</h2>
             </div>
 
-            <div className="event-detail-gallery-grid">
+            <HorizontalCarousel className="event-detail-gallery-grid">
               {event.gallery.map((photo, index) => (
                 <div key={index} className="event-gallery-item">
                   <img src={photo} alt={`${event.title} moment ${index + 1}`} className="event-gallery-img" />
                 </div>
               ))}
-            </div>
+            </HorizontalCarousel>
           </div>
         </section>
       )}

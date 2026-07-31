@@ -291,7 +291,18 @@
     padding: 1.5rem 1.25rem;
   }
 
-  .event-detail-gallery-grid {
-    grid-template-columns: 1fr;
+  /* MOBILE CAROUSEL CARD WIDTHS (<= 768px ONLY) */
+  .carousel-track.events-grid > * {
+    flex: 0 0 88% !important;
+    max-width: 88% !important;
+    scroll-snap-align: start !important;
+    margin: 0 !important;
+  }
+
+  .carousel-track.event-detail-gallery-grid > * {
+    flex: 0 0 90% !important;
+    max-width: 90% !important;
+    scroll-snap-align: start !important;
+    margin: 0 !important;
   }
 }
