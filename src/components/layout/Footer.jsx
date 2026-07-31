@@ -44,7 +44,7 @@ function Footer() {
             <h4>Connect</h4>
             <ul className="footer-links">
               <li><span className="text-muted"><a href="mailto:zenithcsclub@saccm.in">Email: zenithcsclub@saccm.in</a></span></li>
-              <li><span className="text-muted"><a href="https://www.instagram.com/saccm_zenith">Official: Zenith instagram</a></span></li>
+              <li><span className="text-muted"><a href="https://www.instagram.com/saccm_zenith" target='_blank'>Official: Zenith instagram</a></span></li>
             </ul>
           </div>
         </div>
