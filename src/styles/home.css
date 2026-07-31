@@ -568,7 +568,7 @@
 
 .cta-box .btn-outline:hover {
   background-color: #ffffff;
-  color: var(--color-navy);
+  color: var(--color-navy) !important;
 }
 
 

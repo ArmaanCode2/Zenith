@@ -2,8 +2,8 @@
 
 :root {
   
-  --color-primary: #800020;         
-  --color-primary-hover: #66001a;   
+  --color-primary: #0f172a;         
+  --color-primary-hover: #1B347B;   
   --color-navy: #0f172a;            
   --color-navy-light: #1e293b;      
   --color-accent: #991b1b;          
@@ -140,7 +140,7 @@ a:hover {
 
 .btn-outline:hover {
   background-color: var(--color-primary);
-  color: var(--color-text-light);
+  color: var(--color-text-light) !important;
 }
 
 

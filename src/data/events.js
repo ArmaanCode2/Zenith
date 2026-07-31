@@ -1,4 +1,3 @@
-// Central Event Data Source for Zenith CS Club
 export const eventsData = [
   {
     id: 'case-files',
@@ -9,7 +8,7 @@ export const eventsData = [
     image: '/events/case-file/case-file.jpg',
     shortDescription: 'A multi-round competition featuring a web-based quiz followed by a clue-based physical campus hunt.',
     description: 'Case Files is a flagship multi-stage competition designed to test technical concepts, logical problem-solving, and physical teamwork. Participants first competed in a digital PHP/database quiz before advancing to an exciting clue-based treasure hunt across the SACCM campus.',
-    featured: false,
+    featured: true,
     rounds: [
       {
         roundNumber: 1,
@@ -55,7 +54,7 @@ export const eventsData = [
     image: '/events/orientation-2026/2.jpg',
     shortDescription: 'A session held for first-year students introducing Zenith CS Club, followed by an interactive tech quiz.',
     description: 'An orientation session organized for incoming first-year BCA students at SACCM. The event introduced the club\'s vision, past activities, and upcoming opportunities, followed by an interactive introductory quiz session.',
-    featured: true,
+    featured: false,
     gallery: [
       '/events/orientation-2026/1.jpg',
       '/events/orientation-2026/2.jpg',
