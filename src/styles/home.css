@@ -1,6 +1,6 @@
-/* Home Page Section Styles - Zenith CS Club */
 
-/* Section Utilities & Background Alternation */
+
+
 .section {
   padding: 4.5rem 0;
 }
@@ -59,7 +59,7 @@
   color: #94a3b8;
 }
 
-/* SECTION 1: HERO */
+
 .hero-section {
   padding: 4.5rem 0 5rem 0;
   background: linear-gradient(180deg, #ffffff 0%, var(--color-background) 100%);
@@ -150,7 +150,7 @@
   opacity: 0.7;
 }
 
-/* SECTION 2: INTRO */
+
 .intro-container {
   display: flex;
   flex-direction: column;
@@ -172,7 +172,7 @@
   gap: 0.65rem;
 }
 
-/* SECTION 3: WHAT WE DO */
+
 .pillars-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -226,7 +226,7 @@
   line-height: 1.55;
 }
 
-/* SECTION 4: FEATURED EVENT */
+
 .featured-event-container {
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -317,7 +317,7 @@
   text-align: center;
 }
 
-/* SECTION 5: RECENT ACTIVITIES */
+
 .events-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -412,7 +412,7 @@
   color: var(--color-primary);
 }
 
-/* SECTION 6: TEAM PREVIEW */
+
 .team-preview-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -531,7 +531,7 @@
   box-shadow: var(--shadow-md);
 }
 
-/* SECTION 8: FINAL CTA */
+
 .cta-box {
   background: linear-gradient(135deg, var(--color-navy) 0%, #1e3a8a 100%);
   color: var(--color-text-light);
@@ -571,7 +571,7 @@
   color: var(--color-navy);
 }
 
-/* CAROUSEL BASE STYLES */
+
 .carousel-wrapper {
   position: relative;
   width: 100%;
@@ -581,7 +581,7 @@
   display: none;
 }
 
-/* Responsive Media Queries */
+
 @media (max-width: 1024px) {
   .pillars-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -620,7 +620,7 @@
     font-size: 1.75rem;
   }
 
-  /* MOBILE HORIZONTAL CAROUSELS (<= 768px) */
+  
   .carousel-wrapper {
     overflow: hidden;
   }
@@ -680,7 +680,7 @@
     display: none;
   }
 
-  /* Main Card width on Mobile: 85% width so next card peeks */
+  
   .carousel-track > * {
     flex: 0 0 85% !important;
     max-width: 85% !important;
