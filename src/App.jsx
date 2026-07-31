@@ -13,7 +13,6 @@ import EventsPage from './pages/EventsPage';
 import EventDetailPage from './pages/EventDetailPage';
 import TeamPage from './pages/TeamPage';
 import GalleryPage from './pages/GalleryPage';
-import ContactPage from './pages/ContactPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
@@ -30,7 +29,6 @@ function App() {
             <Route path="/events/:eventId" element={<EventDetailPage />} />
             <Route path="/team" element={<TeamPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
-            <Route path="/contact" element={<ContactPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>

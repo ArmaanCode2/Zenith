@@ -79,15 +79,6 @@ function Navbar() {
                 Gallery
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink 
-                to="/contact" 
-                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-                onClick={closeMenu}
-              >
-                Contact
-              </NavLink>
-            </li>
           </ul>
         </nav>
       </div>

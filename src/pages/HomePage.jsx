@@ -277,9 +277,6 @@ function HomePage() {
               <Link to="/events" className="btn btn-primary">
                 Explore Events
               </Link>
-              <Link to="/contact" className="btn btn-outline">
-                Contact Us
-              </Link>
             </div>
           </div>
         </div>
