@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import EventCard from '../components/common/EventCard';
 import MemberCard from '../components/common/MemberCard';
 import HorizontalCarousel from '../components/common/HorizontalCarousel';
-import { eventsData } from '../data/events';
+import { eventsData, getFeaturedEvent } from '../data/events';
 import '../styles/home.css';
 
 function HomePage() {
+  const featuredEvent = getFeaturedEvent();
+
   return (
     <div className="home-page">
       <section className="hero-section">
@@ -118,66 +120,59 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="section bg-white">
-        <div className="container">
-          <div className="section-header">
-            <span className="section-label">Highlighted Event Format</span>
-            <h2>Multi-Round Competition Showcase</h2>
-            <p className="section-description">
-              Zenith events often feature multi-phase formats combining digital challenges with physical campus activities.
-            </p>
-          </div>
+      {featuredEvent && (
+        <section className="section bg-white">
+          <div className="container">
+            <div className="section-header">
+              <span className="section-label">Highlighted Event</span>
+            </div>
 
-          <div className="featured-event-container">
-            <div className="featured-event-grid">
-              <div className="featured-event-body">
-                <span className="section-label">Case Files treasure hunt</span>
-                <h3 className="featured-event-title">Flagship Multi-Round Tech Event</h3>
-                <p className="text-muted">
-                  An interactive multi-stage competition structure designed to test both digital proficiency and physical puzzle solving around campus.
-                </p>
+            <div className="featured-event-container">
+              <div className="featured-event-grid">
+                <div className="featured-event-body">
+                  <span className="section-label">{featuredEvent.category}</span>
+                  <h3 className="featured-event-title">{featuredEvent.title}</h3>
+                  <p className="text-muted">
+                    {featuredEvent.shortDescription || featuredEvent.description}
+                  </p>
 
-                <div className="rounds-timeline">
-                  <div className="round-item">
-                    <div className="round-details">
-                      <span className="round-badge">Round 01</span>
-                      <h4>Interactive Quiz</h4>
-                      <p>
-                        A web-based quiz platform developed using PHP with database-backed data storage to evaluate technical concepts and speed.
-                      </p>
+                  {featuredEvent.rounds && featuredEvent.rounds.length > 0 && (
+                    <div className="rounds-timeline">
+                      {featuredEvent.rounds.map((round) => (
+                        <div key={round.roundNumber} className="round-item">
+                          <div className="round-details">
+                            <span className="round-badge">
+                              Round {round.roundNumber < 10 ? `0${round.roundNumber}` : round.roundNumber}
+                            </span>
+                            <h4>{round.title.replace(/^Round \d+:\s*/i, '')}</h4>
+                            <p>{round.description}</p>
+                          </div>
+                        </div>
+                      ))}
                     </div>
-                  </div>
+                  )}
 
-                  <div className="round-item">
-                    <div className="round-details">
-                      <span className="round-badge">Round 02</span>
-                      <h4>Campus Hunt</h4>
-                      <p>
-                        A physical puzzle hunt starting with a clue slip that directs participants through multiple campus locations to reach the final answer.
-                      </p>
-                    </div>
+                  <div>
+                    <Link to={`/events/${featuredEvent.id}`} className="btn btn-primary">
+                      View Event Details
+                    </Link>
                   </div>
                 </div>
 
-                <div>
-                  <Link to="/events/case-files" className="btn btn-primary">
-                    View Event Details
-                  </Link>
+                <div className="featured-event-media">
+                  <img 
+                    src={featuredEvent.image} 
+                    alt={featuredEvent.title} 
+                    className="hero-image" 
+                  />
                 </div>
-              </div>
-
-              <div className="featured-event-media">
-                <img 
-                  src="/events/case-file/case-file.jpg" 
-                  alt="Zenith CS Club Event" 
-                  className="hero-image" 
-                />
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
+      {/* SECTION 5 — RECENT ACTIVITIES (Driven by src/data/events.js) */}
       <section className="section bg-light">
         <div className="container">
           <div className="section-header">

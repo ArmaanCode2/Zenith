@@ -1,3 +1,4 @@
+// Central Event Data Source for Zenith CS Club
 export const eventsData = [
   {
     id: 'case-files',
@@ -5,17 +6,17 @@ export const eventsData = [
     category: 'Multi-Round Event',
     status: 'Completed',
     date: 'February 3, 2026',
-    image: '/events/case-file/case-file-quiz.png',
+    image: '/events/case-file/case-file.jpg',
     shortDescription: 'A multi-round competition featuring a web-based quiz followed by a clue-based physical campus hunt.',
     description: 'Case Files is a flagship multi-stage competition designed to test technical concepts, logical problem-solving, and physical teamwork. Participants first competed in a digital PHP/database quiz before advancing to an exciting clue-based treasure hunt across the SACCM campus.',
-    featured: true,
+    featured: false,
     rounds: [
       {
         roundNumber: 1,
-        title: 'Round 01: Interactive Quiz',
-        type: 'Web-based Quiz (PHP & DB)',
+        title: 'Interactive Quiz',
+        type: 'Web-based Quiz',
         description: 'A custom web-based quiz platform developed using PHP with database storage to evaluate technical concepts, logical reasoning, riddles, and speed.',
-        image: '/club/case-file-quiz.png',
+        image: '/events/case-file/case-file-quiz.png',
         highlights: [
           '25–30 MCQs covering reasoning, observation, riddles & basic tech',
           'Database-backed score and result tracking',
@@ -25,10 +26,10 @@ export const eventsData = [
       },
       {
         roundNumber: 2,
-        title: 'Round 02: Campus Hunt',
+        title: 'Campus Hunt',
         type: 'Physical Clue Hunt',
         description: 'A physical puzzle hunt starting with a clue slip that directed qualifying teams through multiple hidden locations across the SACCM college campus.',
-        image: '/club/campus-hunt.jpg',
+        image: '/events/case-file/5.png',
         highlights: [
           'Sequential clues hidden at various SACCM campus locations',
           'Required solving puzzles at each station to discover the next location',
@@ -37,9 +38,12 @@ export const eventsData = [
       }
     ],
     gallery: [
-      '/club/case-file.jpg',
-      '/club/case-file-quiz.png',
-      '/club/campus-hunt.jpg'
+      "/events/case-file/1.jpg",
+      "/events/case-file/2.jpg",
+      "/events/case-file/3.jpg",
+      "/events/case-file/4.jpg",
+      "/events/case-file/8.jpg",
+      "/events/case-file/6.jpg",
     ]
   },
   {
@@ -51,9 +55,14 @@ export const eventsData = [
     image: '/events/orientation-2026/2.jpg',
     shortDescription: 'A session held for first-year students introducing Zenith CS Club, followed by an interactive tech quiz.',
     description: 'An orientation session organized for incoming first-year BCA students at SACCM. The event introduced the club\'s vision, past activities, and upcoming opportunities, followed by an interactive introductory quiz session.',
-    featured: false,
+    featured: true,
     gallery: [
-      '/club/29-07-26.jpg'
+      '/events/orientation-2026/1.jpg',
+      '/events/orientation-2026/2.jpg',
+      '/events/orientation-2026/3.jpg',
+      '/events/orientation-2026/4.jpg',
+      '/events/orientation-2026/5.jpg',
+      '/events/orientation-2026/6.jpg',
     ]
   }
 ];
