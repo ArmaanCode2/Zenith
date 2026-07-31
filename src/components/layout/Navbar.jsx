@@ -45,15 +45,6 @@ function Navbar() {
             </li>
             <li className="nav-item">
               <NavLink 
-                to="/about" 
-                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-                onClick={closeMenu}
-              >
-                About
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink 
                 to="/events" 
                 className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
                 onClick={closeMenu}

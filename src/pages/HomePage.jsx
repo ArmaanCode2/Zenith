@@ -24,9 +24,6 @@ function HomePage() {
                 <Link to="/events" className="btn btn-primary">
                   Explore Events
                 </Link>
-                <Link to="/about" className="btn btn-outline">
-                  About Zenith
-                </Link>
               </div>
             </div>
 
@@ -51,9 +48,6 @@ function HomePage() {
             <p className="section-description">
               Zenith CS Club provides opportunities for students to engage with computer science beyond standard academic coursework. Through technical activities, logic competitions, problem-solving challenges, and interactive campus events, students apply their knowledge in practical and collaborative ways.
             </p>
-            <Link to="/about" className="link-arrow">
-              About Zenith &rarr;
-            </Link>
           </div>
         </div>
       </section>
