@@ -4,10 +4,12 @@ import EventCard from '../components/common/EventCard';
 import MemberCard from '../components/common/MemberCard';
 import HorizontalCarousel from '../components/common/HorizontalCarousel';
 import { eventsData, getFeaturedEvent } from '../data/events';
+import { getFeaturedMembers } from '../data/members';
 import '../styles/home.css';
 
 function HomePage() {
   const featuredEvent = getFeaturedEvent();
+  const featuredMembers = getFeaturedMembers();
 
   return (
     <div className="home-page">
@@ -166,7 +168,6 @@ function HomePage() {
         </section>
       )}
 
-      {/* SECTION 5 — RECENT ACTIVITIES (Driven by src/data/events.js) */}
       <section className="section bg-light">
         <div className="container">
           <div className="section-header">
@@ -196,21 +197,9 @@ function HomePage() {
           </div>
 
           <HorizontalCarousel className="team-preview-grid">
-            <MemberCard 
-              image="/team/mayank.jpg"
-              badge="Student Coordinator"
-              namePlaceholder="Mayank Goyal"
-            />
-            <MemberCard 
-              image="/team/rupan.png"
-              badge="Marketing manager"
-              namePlaceholder="Rupa frontline"
-            />
-            <MemberCard 
-              image="/team/arpit.png"
-              badge="Core Team"
-              namePlaceholder="Arpit Gupta"
-            />
+            {featuredMembers.map(member => (
+              <MemberCard key={member.id} member={member} />
+            ))}
           </HorizontalCarousel>
 
           <div style={{ textAlign: 'center' }}>
