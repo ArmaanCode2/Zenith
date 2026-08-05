@@ -63,6 +63,28 @@ export const eventsData = [
       '/events/orientation-2026/5.jpg',
       '/events/orientation-2026/6.jpg',
     ]
+  },
+  {
+    id: 'seminar-oct',
+    title: 'Seminar - Future of work',
+    category: 'Seminar',
+    date: 'October 27, 2025',
+    status: 'Completed',
+    image: '/events/seminar-27-oct/1.jpg',
+    shortDescription: 'A session held for BCA students | yet to decide |',
+    description: '| yet to decide |',
+    featured: false,
+    gallery: [
+      "/events/seminar-27-oct/2.jpg",
+      "/events/seminar-27-oct/3.jpg",
+      "/events/seminar-27-oct/4.jpg",
+      "/events/seminar-27-oct/5.jpg",
+      "/events/seminar-27-oct/6.jpg",
+      "/events/seminar-27-oct/7.jpg",
+      "/events/seminar-27-oct/8.jpg",
+      "/events/seminar-27-oct/9.jpg",
+      "/events/seminar-27-oct/10.jpg",
+    ]
   }
 ];
 
