@@ -8,6 +8,20 @@ function EventDetailPage() {
   const { eventId } = useParams();
   const event = getEventById(eventId);
 
+   useEffect(() => {
+    if (window.location.hash === '#gallery') {
+      const timer = setTimeout(() => {
+        const elem = document.getElementById('gallery');
+        if (elem) {
+          elem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 150);
+      return () => clearTimeout(timer);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [eventId]);
+
   if (!event) {
     return (
       <div className="container" style={{ padding: '4rem 1.5rem', textAlign: 'center' }}>
@@ -134,7 +148,7 @@ function EventDetailPage() {
       )}
 
       {hasGallery && (
-        <section className="section bg-white">
+        <section id="gallery" className="section bg-white">
           <div className="container">
             <div className="section-header">
               <span className="section-label">Media</span>
