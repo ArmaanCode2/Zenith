@@ -41,27 +41,17 @@ export const eventsData = [
       "/events/case-file/2.jpg",
       "/events/case-file/3.jpg",
       "/events/case-file/4.jpg",
-      "/events/case-file/8.jpg",
+      "/events/case-file/5.jpg",
       "/events/case-file/6.jpg",
-    ]
-  },
-  {
-    id: 'orientation-2026',
-    title: 'Orientation 2026: Introduction & Quiz',
-    category: 'Orientation',
-    status: 'Completed',
-    date: 'July 29, 2026',
-    image: '/events/orientation-2026/2.jpg',
-    shortDescription: 'A session held for first-year students introducing Zenith CS Club, followed by an interactive tech quiz.',
-    description: 'An orientation session organized for incoming first-year BCA students at SACCM. The event introduced the club\'s vision, past activities, and upcoming opportunities, followed by an interactive introductory quiz session.',
-    featured: false,
-    gallery: [
-      '/events/orientation-2026/1.jpg',
-      '/events/orientation-2026/2.jpg',
-      '/events/orientation-2026/3.jpg',
-      '/events/orientation-2026/4.jpg',
-      '/events/orientation-2026/5.jpg',
-      '/events/orientation-2026/6.jpg',
+      "/events/case-file/7.jpg",
+      "/events/case-file/8.jpg",
+      "/events/case-file/9.jpg",
+      "/events/case-file/10.jpg",
+      "/events/case-file/11.jpg",
+      "/events/case-file/12.jpg",
+      "/events/case-file/13.jpg",
+      "/events/case-file/14.jpg",
+      "/events/case-file/15.jpg",
     ]
   },
   {
@@ -85,7 +75,29 @@ export const eventsData = [
       "/events/seminar-27-oct/9.jpg",
       "/events/seminar-27-oct/10.jpg",
     ]
-  }
+  },
+    {
+      id: 'orientation-2026',
+      title: 'Orientation 2026: Introduction & Quiz',
+      category: 'Orientation',
+      status: 'Completed',
+      date: 'July 29, 2026',
+      image: '/events/orientation-2026/2.jpg',
+      shortDescription: 'A session held for first-year students introducing Zenith CS Club, followed by an interactive tech quiz.',
+      description: 'An orientation session organized for incoming first-year BCA students at SACCM. The event introduced the club\'s vision, past activities, and upcoming opportunities, followed by an interactive introductory quiz session.',
+      featured: false,
+      gallery: [
+        '/events/orientation-2026/1.jpg',
+        '/events/orientation-2026/2.jpg',
+        '/events/orientation-2026/3.jpg',
+        '/events/orientation-2026/4.jpg',
+        '/events/orientation-2026/5.jpg',
+        '/events/orientation-2026/6.jpg',
+        '/events/orientation-2026/7.jpg',
+        '/events/orientation-2026/8.jpg',
+        '/events/orientation-2026/9.jpg',
+      ]
+    },
 ];
 
 export const getAllEvents = () => eventsData;
