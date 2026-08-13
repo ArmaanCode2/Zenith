@@ -8,22 +8,6 @@ export const membersData = [
     featured: true
   },
   {
-    id: "member-02",
-    name: "Rupanpreet singh",
-    role: "Marketing Manager",
-    group: "Marketing",
-    image: "/team/rupan.png",
-    featured: true
-  },
-  {
-    id: "member-03",
-    name: "Arpit gupta",
-    role: "Marketing Manager",
-    group: "Marketing",
-    image: "/team/arpit.png",
-    featured: true
-  },
-  {
     id: "member-04",
     name: "Mohit sony",
     role: "Marketing Manager",
@@ -73,10 +57,10 @@ export const membersData = [
   },
   {
     id: "member-10",
-    name: "Ishnoor",
+    name: "Vaidant jindal",
     role: "Member executive",
     group: "Executives",
-    image: "/team/ishnoor.png",
+    image: "/team/vaidant.jpg",
     featured: false
   },
 ];
