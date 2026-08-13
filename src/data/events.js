@@ -1,5 +1,22 @@
 // Central Event Data Source for Zenith CS Club
 export const eventsData = [
+  // TEMPORARY REGISTRATION DEMO — REMOVE AFTER TESTING
+  {
+    id: 'registration-demo', //this can be anything recommended is that its same as the event name 
+    type: 'registration', // this can be only registration or event
+    title: 'Zenith Registration Demo', //the big title of the event 
+    category: 'Registration',//this is just a small text on the event card
+    status: 'completed', //just a secondary  indicatornprimary is registrationStatus . this can be removed in only the registration event types
+    date: 'August 22, 2026', //the main date shown on the page
+    image: '/events/orientation-2026/2.jpg', //the cover image of the event
+    shortDescription: 'Temporary demo event used to demonstrate the registration event structure.', //this is shown just below the main title 
+    description: 'This is a temporary test event used to demonstrate how registration-based events behave across the Zenith CS Club website, including registration status badges, deadlines, and embedded Google Forms.', //this is shown in the about the event section
+    featured: true, // true if u want this to appear on the home page
+    registrationStatus: 'open', // determines wether if the registration is open or not this is important to add 
+    registrationDeadline: 'August 28, 2026', //important parameter 
+    formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdMhH5PDXQALTQMriVob1ZniQ1uPOBEXopKLb28elDwj0ADew/viewform?usp=header' //the public form url
+  },
+  // END TEMPORARY REGISTRATION DEMO
   {
     id: 'case-files',
     type: 'event',
@@ -10,7 +27,7 @@ export const eventsData = [
     image: '/events/case-file/case-file.jpg',
     shortDescription: 'A multi-round competition featuring a web-based quiz followed by a clue-based physical campus hunt.',
     description: 'Case Files is a flagship multi-stage competition designed to test technical concepts, logical problem-solving, and physical teamwork. Participants first competed in a digital PHP/database quiz before advancing to an exciting clue-based treasure hunt across the SACCM campus.',
-    featured: true,
+    featured: false,
     rounds: [
       {
         roundNumber: 1,
