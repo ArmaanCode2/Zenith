@@ -108,8 +108,28 @@
   color: #ffffff;
 }
 
-.registration-event-card {
+.registration-card-open {
   border-left: 4px solid #15803d;
+}
+
+.registration-card-open .event-card-cta-text {
+  color: #15803d;
+}
+
+.registration-card-closed {
+  border-left: 4px solid #b91c1c;
+}
+
+.registration-card-closed .event-card-cta-text {
+  color: var(--color-text-muted);
+}
+
+.registration-card-coming {
+  border-left: 4px solid var(--color-navy);
+}
+
+.registration-card-coming .event-card-cta-text {
+  color: var(--color-navy);
 }
 
 .event-card-cta-text {

@@ -15,17 +15,27 @@ function EventCard({ event, image, category, title, date, description, detailsLi
   const targetLink = detailsLink || (eventId ? `/events/${eventId}` : '/events');
 
   let ctaText = 'View Details \u2192';
+  let statusVariantClass = '';
+
   if (isRegistration) {
     if (regStatus === 'open') {
       ctaText = 'Register Now \u2192';
+      statusVariantClass = 'registration-card-open';
     } else if (regStatus === 'closed') {
       ctaText = 'View Event \u2192';
+      statusVariantClass = 'registration-card-closed';
+    } else if (regStatus === 'coming-soon') {
+      ctaText = 'View Event \u2192';
+      statusVariantClass = 'registration-card-coming';
+    } else {
+      ctaText = 'Register Now \u2192';
+      statusVariantClass = 'registration-card-open';
     }
   }
 
   return (
     <Link to={targetLink} className="event-card-wrapper-link">
-      <div className={`event-card ${isRegistration ? 'registration-event-card' : ''}`}>
+      <div className={`event-card ${statusVariantClass}`}>
         <div className="event-card-image-wrapper">
           {cardImage ? (
             <img src={cardImage} alt={cardTitle} className="event-card-image" />
@@ -37,7 +47,7 @@ function EventCard({ event, image, category, title, date, description, detailsLi
           
           <div className="event-card-badges">
             {cardCategory && <span className="event-card-category">{cardCategory}</span>}
-            {isRegistration && regStatus === 'open' && (
+            {isRegistration && (regStatus === 'open' || (!regStatus && isRegistration)) && (
               <span className="event-card-status-badge status-open">Registration Open</span>
             )}
             {isRegistration && regStatus === 'closed' && (

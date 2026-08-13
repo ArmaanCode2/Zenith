@@ -5,7 +5,13 @@ import { getAllEvents } from '../data/events';
 import '../styles/gallery.css';
 
 function GalleryPage() {
-  const events = getAllEvents();
+  const allEvents = getAllEvents();
+  
+  // gallery eligibility rule
+  const events = allEvents.filter(event => {
+    const eventType = event.type || 'event';
+    return eventType === 'event' && Array.isArray(event.gallery) && event.gallery.length > 0;
+  });
 
   return (
     <div className="gallery-page">
