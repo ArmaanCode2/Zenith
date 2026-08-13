@@ -9,6 +9,9 @@ import '../styles/home.css';
 
 function HomePage() {
   const featuredEvent = getFeaturedEvent();
+  const featuredEventType = (featuredEvent && featuredEvent.type) || 'event';
+  const isFeaturedRegistration = featuredEventType === 'registration';
+  const isFeaturedRegOpen = isFeaturedRegistration && (featuredEvent.registrationStatus === 'open' || !featuredEvent.registrationStatus);
   const featuredMembers = getFeaturedMembers();
 
   return (
@@ -120,7 +123,15 @@ function HomePage() {
         <section className="section bg-white">
           <div className="container">
             <div className="section-header">
-              <span className="section-label">Highlighted Event</span>
+              <span className="section-label">
+                {isFeaturedRegistration && isFeaturedRegOpen ? 'Registration Open' : 'Highlighted Event Format'}
+              </span>
+              <h2>{isFeaturedRegistration ? featuredEvent.title : 'Multi-Round Competition Showcase'}</h2>
+              <p className="section-description">
+                {isFeaturedRegistration 
+                  ? (featuredEvent.shortDescription || featuredEvent.description) 
+                  : 'Zenith events often feature multi-phase formats combining digital challenges with physical campus activities.'}
+              </p>
             </div>
 
             <div className="featured-event-container">
@@ -140,7 +151,7 @@ function HomePage() {
                             <span className="round-badge">
                               Round {round.roundNumber < 10 ? `0${round.roundNumber}` : round.roundNumber}
                             </span>
-                            <h4>{round.title.replace(/^Round \d+:\s*/i, '')}</h4>
+                            <h4>{round.title}</h4>
                             <p>{round.description}</p>
                           </div>
                         </div>
@@ -150,7 +161,7 @@ function HomePage() {
 
                   <div>
                     <Link to={`/events/${featuredEvent.id}`} className="btn btn-primary">
-                      View Event Details
+                      {isFeaturedRegistration && isFeaturedRegOpen ? 'Register Now' : 'View Event Details'}
                     </Link>
                   </div>
                 </div>

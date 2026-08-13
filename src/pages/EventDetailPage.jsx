@@ -8,10 +8,12 @@ function EventDetailPage() {
   const { eventId } = useParams();
   const event = getEventById(eventId);
 
-   useEffect(() => {
-    if (window.location.hash === '#gallery') {
+  // Scroll handling: scroll to #gallery or #register-form if hash is present, otherwise scroll to top
+  useEffect(() => {
+    if (window.location.hash) {
+      const hashId = window.location.hash.replace('#', '');
       const timer = setTimeout(() => {
-        const elem = document.getElementById('gallery');
+        const elem = document.getElementById(hashId);
         if (elem) {
           elem.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
@@ -22,6 +24,7 @@ function EventDetailPage() {
     }
   }, [eventId]);
 
+  // Handle Event Not Found
   if (!event) {
     return (
       <div className="container" style={{ padding: '4rem 1.5rem', textAlign: 'center' }}>
@@ -39,6 +42,11 @@ function EventDetailPage() {
     );
   }
 
+  const eventType = event.type || 'event';
+  const isRegistration = eventType === 'registration';
+  const regStatus = event.registrationStatus || (event.status === 'Registration Open' ? 'open' : 'closed');
+  const isFormOpen = isRegistration && regStatus === 'open';
+
   const hasRounds = event.rounds && event.rounds.length > 0;
   const hasGallery = event.gallery && event.gallery.length > 0;
   const hasWinners = event.winners && event.winners.length > 0;
@@ -51,17 +59,31 @@ function EventDetailPage() {
             <div className="event-detail-hero-content">
               <div className="event-meta-tags">
                 {event.category && <span className="event-badge category-badge">{event.category}</span>}
-                {event.status && <span className="event-badge status-badge">{event.status}</span>}
+                {isRegistration ? (
+                  <span className={`event-badge status-badge ${regStatus === 'open' ? 'status-open-badge' : 'status-closed-badge'}`}>
+                    {regStatus === 'open' ? 'Registration Open' : regStatus === 'closed' ? 'Registration Closed' : regStatus}
+                  </span>
+                ) : (
+                  event.status && <span className="event-badge status-badge">{event.status}</span>
+                )}
               </div>
 
               <h1 className="event-detail-title">{event.title}</h1>
               {event.date && <div className="event-detail-date">📅 {event.date}</div>}
+              {isRegistration && event.registrationDeadline && (
+                <div className="event-detail-deadline">⏰ Registration Deadline: {event.registrationDeadline}</div>
+              )}
               
               <p className="event-detail-lead">
                 {event.shortDescription || event.description}
               </p>
 
-              <div style={{ marginTop: '1.5rem' }}>
+              <div style={{ marginTop: '1.5rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                {isRegistration && isFormOpen && event.formUrl && (
+                  <a href="#register-form" className="btn btn-primary">
+                    Register Now &darr;
+                  </a>
+                )}
                 <Link to="/events" className="btn btn-outline" style={{ borderColor: 'var(--color-navy)', color: 'var(--color-navy)' }}>
                   &larr; Back to All Events
                 </Link>
@@ -87,8 +109,54 @@ function EventDetailPage() {
         </div>
       </section>
 
+      {isRegistration && (
+        <section id="register-form" className="section bg-light">
+          <div className="container">
+            <div className="section-header text-center">
+              <span className="section-label">Registration</span>
+              <h2>Event Registration Form</h2>
+              <p className="section-description">
+                {isFormOpen 
+                  ? 'Fill out the official form below to register for this event.'
+                  : 'Official registration status for this event.'}
+              </p>
+            </div>
+
+            {isFormOpen && event.formUrl ? (
+              <div className="google-form-container">
+                <iframe
+                  src={event.formUrl}
+                  title={`${event.title} Registration Form`}
+                  width="100%"
+                  height="850"
+                  frameBorder="0"
+                  marginHeight="0"
+                  marginWidth="0"
+                  loading="lazy"
+                  className="google-form-iframe"
+                >
+                  Loading registration form...
+                </iframe>
+              </div>
+            ) : regStatus === 'closed' ? (
+              <div className="registration-notice-box closed">
+                <div className="notice-icon">🔒</div>
+                <h3>Registration Closed</h3>
+                <p>Registration for this event is currently closed. Thank you for your interest!</p>
+              </div>
+            ) : (
+              <div className="registration-notice-box coming-soon">
+                <div className="notice-icon">📝</div>
+                <h3>Registration Coming Soon</h3>
+                <p>The official registration form will be available soon. Please check back shortly!</p>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
       {hasRounds && (
-        <section className="section bg-light">
+        <section className="section bg-white">
           <div className="container">
             <div className="section-header">
               <span className="section-label">Competition Structure</span>

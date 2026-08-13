@@ -1,6 +1,8 @@
+// Central Event Data Source for Zenith CS Club
 export const eventsData = [
   {
     id: 'case-files',
+    type: 'event',
     title: 'Case Files: The Campus Edition',
     category: 'Multi-Round Event',
     status: 'Completed',
@@ -56,6 +58,7 @@ export const eventsData = [
   },
   {
     id: 'seminar-oct',
+    type: 'event',
     title: 'Seminar - Future of work',
     category: 'Seminar',
     date: 'October 27, 2025',
@@ -76,28 +79,29 @@ export const eventsData = [
       "/events/seminar-27-oct/10.jpg",
     ]
   },
-    {
-      id: 'orientation-2026',
-      title: 'Orientation 2026: Introduction & Quiz',
-      category: 'Orientation',
-      status: 'Completed',
-      date: 'July 29, 2026',
-      image: '/events/orientation-2026/2.jpg',
-      shortDescription: 'A session held for first-year students introducing Zenith CS Club, followed by an interactive tech quiz.',
-      description: 'An orientation session organized for incoming first-year BCA students at SACCM. The event introduced the club\'s vision, past activities, and upcoming opportunities, followed by an interactive introductory quiz session.',
-      featured: false,
-      gallery: [
-        '/events/orientation-2026/1.jpg',
-        '/events/orientation-2026/2.jpg',
-        '/events/orientation-2026/3.jpg',
-        '/events/orientation-2026/4.jpg',
-        '/events/orientation-2026/5.jpg',
-        '/events/orientation-2026/6.jpg',
-        '/events/orientation-2026/7.jpg',
-        '/events/orientation-2026/8.jpg',
-        '/events/orientation-2026/9.jpg',
-      ]
-    },
+  {
+    id: 'orientation-2026',
+    type: 'event',
+    title: 'Orientation 2026: Introduction & Quiz',
+    category: 'Orientation',
+    status: 'Completed',
+    date: 'July 29, 2026',
+    image: '/events/orientation-2026/2.jpg',
+    shortDescription: 'A session held for first-year students introducing Zenith CS Club, followed by an interactive tech quiz.',
+    description: 'An orientation session organized for incoming first-year BCA students at SACCM. The event introduced the club\'s vision, past activities, and upcoming opportunities, followed by an interactive introductory quiz session.',
+    featured: false,
+    gallery: [
+      '/events/orientation-2026/1.jpg',
+      '/events/orientation-2026/2.jpg',
+      '/events/orientation-2026/3.jpg',
+      '/events/orientation-2026/4.jpg',
+      '/events/orientation-2026/5.jpg',
+      '/events/orientation-2026/6.jpg',
+      '/events/orientation-2026/7.jpg',
+      '/events/orientation-2026/8.jpg',
+      '/events/orientation-2026/9.jpg',
+    ]
+  }
 ];
 
 export const getAllEvents = () => eventsData;
