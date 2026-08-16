@@ -25,10 +25,10 @@ export const membersData = [
   },
   {
     id: "member-06",
-    name: "Divyanshu jain",
+    name: "Samar beerbansal",
     role: "Member executive",
     group: "Executives",
-    image: "/team/divyanshu.png",
+    image: "/team/sameer.jpg",
     featured: false
   },
   {
