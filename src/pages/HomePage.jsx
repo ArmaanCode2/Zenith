@@ -190,7 +190,7 @@ function HomePage() {
           </div>
 
           <HorizontalCarousel className="events-grid">
-            {eventsData.map(event => (
+            {eventsData.slice(0, 3).map(event => (
               <EventCard key={event.id} event={event} />
             ))}
           </HorizontalCarousel>
