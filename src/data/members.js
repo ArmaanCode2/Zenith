@@ -20,7 +20,7 @@ export const membersData = [
     name: "Rahul uppal",
     role: "Member executive",
     group: "Executives",
-    image: "/team/rahul.png",
+    image: "/team/rahul.jpg",
     featured: false
   },
   {
