@@ -124,14 +124,8 @@ function HomePage() {
           <div className="container">
             <div className="section-header">
               <span className="section-label">
-                {isFeaturedRegistration && isFeaturedRegOpen ? 'Registration Open' : 'Highlighted Event Format'}
+                {isFeaturedRegistration && isFeaturedRegOpen ? 'Registration Open' : 'Highlighted Event'}
               </span>
-              <h2>{isFeaturedRegistration ? featuredEvent.title : 'Multi-Round Competition Showcase'}</h2>
-              <p className="section-description">
-                {isFeaturedRegistration 
-                  ? (featuredEvent.shortDescription || featuredEvent.description) 
-                  : 'Zenith events often feature multi-phase formats combining digital challenges with physical campus activities.'}
-              </p>
             </div>
 
             <div className="featured-event-container">

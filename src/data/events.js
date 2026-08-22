@@ -24,35 +24,58 @@
 
 export const eventsData = [
   {
-    id: 'registration-demo', //this can be anything recommended is that its same as the event name 
-    type: 'registration', // this can be only registration or event
-    title: 'Zenith Registration Demo', //the big title of the event 
-    category: 'Registration',//this is just a small text on the event card
-    status: 'upcoming', //just a secondary  indicatornprimary is registrationStatus . this can be removed in only the registration event types
-    date: 'August 22, 2026', //the main date shown on the page
-    image: '/events/orientation-2026/2.jpg', //the cover image of the event
-    shortDescription: 'Temporary demo event used to demonstrate the registration event structure.', //this is shown just below the main title 
-    description: 'This is a temporary test event used to demonstrate how registration-based events behave across the Zenith CS Club website, including registration status badges, deadlines, and embedded Google Forms.', //this is shown in the about the event section
-    featured: true, // true if u want this to appear on the home page
-    registrationStatus: 'open', // determines wether if the registration is open or not this is important to add 
-    registrationDeadline: 'August 28, 2026', //important parameter 
-    formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdMhH5PDXQALTQMriVob1ZniQ1uPOBEXopKLb28elDwj0ADew/viewform?usp=header' //the public form url
+    id: 'august-2026',
+    type: 'event',
+    title: 'UI/UX competition',
+    category: 'Single Round Event',
+    date: 'August 20, 2026',
+    status: 'Completed',
+    image: '/events/UI-august-2026/1.jpg',
+    shortDescription: 'An intense 60-minute UI/UX design showdown featuring on-the-spot topics and rapid prototyping. ',
+    description: 'This UI/UX competition was designed to simulate real-world, high-pressure design sprints. Rather than coming in with pre-planned ideas, teams were given a topic on the spot and had only one hour to deliver a complete design solution. The challenge tested not just their mastery of design tools, but their ability to communicate as a team, apply fundamental UX principles on the fly, and transform a blank canvas into a polished interface before the buzzer.',
+    featured: true,
+    gallery: [
+      "/events/UI-august-2026/2.jpg",
+      "/events/UI-august-2026/3.jpg",
+      "/events/UI-august-2026/4.jpg",
+      "/events/UI-august-2026/5.jpg",
+      "/events/UI-august-2026/6.jpg",
+      "/events/UI-august-2026/7.jpg",
+      "/events/UI-august-2026/8.jpg",
+      "/events/UI-august-2026/9.jpg",
+      "/events/UI-august-2026/10.jpg",
+    ]
   },
-  {
-    id: 'registration-demo-closed', //this can be anything recommended is that its same as the event name 
-    type: 'registration', // this can be only registration or event
-    title: 'Zenith Registration Demo', //the big title of the event 
-    category: 'Registration',//this is just a small text on the event card
-    status: 'completed', //just a secondary  indicatornprimary is registrationStatus . this can be removed in only the registration event types
-    date: 'August 22, 2026', //the main date shown on the page
-    image: '/events/orientation-2026/2.jpg', //the cover image of the event
-    shortDescription: 'Temporary demo event used to demonstrate the registration event structure.', //this is shown just below the main title 
-    description: 'This is a temporary test event used to demonstrate how registration-based events behave across the Zenith CS Club website, including registration status badges, deadlines, and embedded Google Forms.', //this is shown in the about the event section
-    featured: false, // true if u want this to appear on the home page
-    registrationStatus: 'closed', // determines wether if the registration is open or not this is important to add 
-    registrationDeadline: 'August 28, 2026', //important parameter 
-    formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdMhH5PDXQALTQMriVob1ZniQ1uPOBEXopKLb28elDwj0ADew/viewform?usp=header' //the public form url
-  },
+  // {
+  //   id: 'registration-demo', //this can be anything recommended is that its same as the event name 
+  //   type: 'registration', // this can be only registration or event
+  //   title: 'Zenith Registration Demo', //the big title of the event 
+  //   category: 'Registration',//this is just a small text on the event card
+  //   status: 'upcoming', //just a secondary  indicatornprimary is registrationStatus . this can be removed in only the registration event types
+  //   date: 'August 22, 2026', //the main date shown on the page
+  //   image: '/events/orientation-2026/2.jpg', //the cover image of the event
+  //   shortDescription: 'Temporary demo event used to demonstrate the registration event structure.', //this is shown just below the main title 
+  //   description: 'This is a temporary test event used to demonstrate how registration-based events behave across the Zenith CS Club website, including registration status badges, deadlines, and embedded Google Forms.', //this is shown in the about the event section
+  //   featured: false, // true if u want this to appear on the home page
+  //   registrationStatus: 'open', // determines wether if the registration is open or not this is important to add 
+  //   registrationDeadline: 'August 28, 2026', //important parameter 
+  //   formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdMhH5PDXQALTQMriVob1ZniQ1uPOBEXopKLb28elDwj0ADew/viewform?usp=header' //the public form url
+  // },
+  // {
+  //   id: 'registration-demo-closed', //this can be anything recommended is that its same as the event name 
+  //   type: 'registration', // this can be only registration or event
+  //   title: 'Zenith Registration Demo', //the big title of the event 
+  //   category: 'Registration',//this is just a small text on the event card
+  //   status: 'completed', //just a secondary  indicatornprimary is registrationStatus . this can be removed in only the registration event types
+  //   date: 'August 22, 2026', //the main date shown on the page
+  //   image: '/events/orientation-2026/2.jpg', //the cover image of the event
+  //   shortDescription: 'Temporary demo event used to demonstrate the registration event structure.', //this is shown just below the main title 
+  //   description: 'This is a temporary test event used to demonstrate how registration-based events behave across the Zenith CS Club website, including registration status badges, deadlines, and embedded Google Forms.', //this is shown in the about the event section
+  //   featured: false, // true if u want this to appear on the home page
+  //   registrationStatus: 'closed', // determines wether if the registration is open or not this is important to add 
+  //   registrationDeadline: 'August 28, 2026', //important parameter 
+  //   formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdMhH5PDXQALTQMriVob1ZniQ1uPOBEXopKLb28elDwj0ADew/viewform?usp=header' //the public form url
+  // },
   {
     id: 'case-files',
     type: 'event',

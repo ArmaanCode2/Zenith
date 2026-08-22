@@ -9,11 +9,11 @@ export const membersData = [
   },
   {
     id: "member-04",
-    name: "Mohit sony",
+    name: "Mohit soni",
     role: "Marketing Manager",
     group: "Marketing",
     image: "/team/mohit.png",
-    featured: false
+    featured: true
   },
   {
     id: "member-05",
@@ -37,7 +37,7 @@ export const membersData = [
     role: "Member executive",
     group: "Executives",
     image: "/team/isha.png",
-    featured: false
+    featured: true
   },
   {
     id: "member-08",
