@@ -63,6 +63,14 @@ export const membersData = [
     image: "/team/vaidant.jpg",
     featured: false
   },
+  {
+    id: "member-11",
+    name: "Vansh",
+    role: "Member executive",
+    group: "Executives",
+    image: "/team/vansh.jpg",
+    featured: false
+  },
 ];
 
 export const getAllMembers = () => membersData;
